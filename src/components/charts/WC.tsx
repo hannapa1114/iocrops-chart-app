@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Highcharts from 'highcharts';
+import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import HC_exporting from 'highcharts/modules/exporting';
 import dataExport from 'highcharts/modules/export-data';
@@ -14,7 +14,7 @@ function WC(): JSX.Element {
   const options = {
     chart: {
       type: 'line',
-      zoomType: 'X',
+      zoomType: 'x',
     },
     title: {
       text: 'WC',
@@ -32,6 +32,17 @@ function WC(): JSX.Element {
         data: WC_slab2,
       },
     ],
+    navigator: {
+      enabled: true,
+    },
+    navigation: {
+      buttonOptions: {
+        enabled: true,
+      },
+    },
+    scrollbar: {
+      enabled: true,
+    },
     exporting: {
       showTable: false,
       tableCaption: 'Data table',
