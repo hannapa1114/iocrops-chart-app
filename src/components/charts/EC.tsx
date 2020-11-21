@@ -51,7 +51,7 @@ function EC(): JSX.Element {
       enabled: true,
     },
     exporting: {
-      showTable: true,
+      showTable: false,
       buttons: {
         contextButton: {
           enabled: true,
