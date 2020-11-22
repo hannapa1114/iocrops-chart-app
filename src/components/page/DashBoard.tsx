@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import * as chart1 from '../../chart1.json';
 import {
   time,
@@ -129,7 +130,7 @@ function DashBoard(): JSX.Element {
     }
   };
   const handleClickShowWC2 = (): void => {
-    if (isWc1) {
+    if (isWc2) {
       const newSerise = {
         name: 'WC_slab2',
         data: WC_slab2,
@@ -337,135 +338,214 @@ function DashBoard(): JSX.Element {
             <Li>{dataAvg}</Li>
             <Li>
               <InputWrap>
-                <input
-                  type='checkbox'
-                  id='ec1'
-                  onClick={() => {
-                    handleClickShowEC1();
-                  }}
-                />
-                <label htmlFor='ec1'>EC_slab1</label>
-
-                <input
-                  type='checkbox'
-                  id='ec2'
-                  onClick={() => {
-                    handleClickShowEC2();
-                  }}
-                />
-                <label htmlFor='ec2'>EC_slab2</label>
-                <input
-                  type='checkbox'
-                  id='ecdrain'
-                  onClick={() => {
-                    handleClickShowECdrain();
-                  }}
-                />
-                <label htmlFor='ecdrain'>EC_drain_PC</label>
-                <input
-                  type='checkbox'
-                  id='wc1'
-                  onClick={() => {
-                    handleClickShowWC1();
-                  }}
-                />
-                <label htmlFor='wc1'>WC_slab1</label>
-                <input
-                  type='checkbox'
-                  id='wc2'
-                  onClick={() => {
-                    handleClickShowWC2();
-                  }}
-                />
-                <label htmlFor='wc2'>WC_slab2</label>
-                <input
-                  type='checkbox'
-                  id='CO2air'
-                  onClick={() => {
-                    handleClickShowCo2();
-                  }}
-                />
-                <label htmlFor='CO2air'>CO2air</label>
-                <input
-                  type='checkbox'
-                  id='HUMDef'
-                  onClick={() => {
-                    handleClickShowHumDef();
-                  }}
-                />
-                <label htmlFor='HUMDef'>HumDef</label>
-                <input
-                  type='checkbox'
-                  id='Rhair'
-                  onClick={() => {
-                    handleClickShowRhair();
-                  }}
-                />
-                <label htmlFor='Rhair'>Rhair</label>
-                <input
-                  type='checkbox'
-                  id='Tair'
-                  onClick={() => {
-                    handleClickShowTair();
-                  }}
-                />
-                <label htmlFor='Tair'>Tair</label>
-                <input
-                  type='checkbox'
-                  id='EnScr'
-                  onClick={() => {
-                    handleClickShowEnScr();
-                  }}
-                />
-                <label htmlFor='EnScr'>EnScr</label>
-                <input
-                  type='checkbox'
-                  id='BlackScr'
-                  onClick={() => {
-                    handleClickShowBlackScr();
-                  }}
-                />
-                <label htmlFor='BlackScr'>BlackScr</label>
-                <input
-                  type='checkbox'
-                  id='PipeGrow'
-                  onClick={() => {
-                    handleClickShowPipeGrow();
-                  }}
-                />
-                <label htmlFor='PipeGrow'>PipeGrow</label>
-                <input
-                  type='checkbox'
-                  id='PipeLow'
-                  onClick={() => {
-                    handleClickShowPipeLow();
-                  }}
-                />
-                <label htmlFor='PipeLow'>PipeLow</label>
-                <input
-                  type='checkbox'
-                  id='IGlob'
-                  onClick={() => {
-                    handleClickShowIGlob();
-                  }}
-                />
-                <label htmlFor='IGlob'>Iglob</label>
-                <input
-                  type='checkbox'
-                  id='RADSum'
-                  onClick={() => {
-                    handleClickShowRADSum();
-                  }}
-                />
-                <label htmlFor='RADSum'>RadSum</label>
-                <input
-                  type='checkbox'
-                  id='Tout'
-                  onClick={() => {
-                    handleClickShowTout();
-                  }}
-                />
-                <label htmlFor='Tout'>Tout</label>
+                {isEc1 ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowEC1();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowEC1();
+                    }}
+                  />
+                )}
+                {isEc2 ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowEC2();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowEC2();
+                    }}
+                  />
+                )}
+                {isEcdrain ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowECdrain();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowECdrain();
+                    }}
+                  />
+                )}
+                {isWc1 ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowWC1();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowWC1();
+                    }}
+                  />
+                )}
+                {isWc2 ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowWC2();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowWC2();
+                    }}
+                  />
+                )}
+                {isCo2 ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowCo2();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowCo2();
+                    }}
+                  />
+                )}
+                {isHumDef ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowHumDef();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowHumDef();
+                    }}
+                  />
+                )}
+                {isRhair ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowRhair();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowRhair();
+                    }}
+                  />
+                )}
+                {isTair ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowTair();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowTair();
+                    }}
+                  />
+                )}
+                {isES ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowEnScr();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowEnScr();
+                    }}
+                  />
+                )}
+                {isBS ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowBlackScr();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowBlackScr();
+                    }}
+                  />
+                )}
+                {isPG ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowPipeGrow();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowPipeGrow();
+                    }}
+                  />
+                )}
+                {isPL ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowPipeLow();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowPipeLow();
+                    }}
+                  />
+                )}
+                {isIG ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowIGlob();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowIGlob();
+                    }}
+                  />
+                )}
+                {isRS ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowRADSum();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowRADSum();
+                    }}
+                  />
+                )}
+                {isTout ? (
+                  <EmptyStar
+                    onClick={() => {
+                      handleClickShowTout();
+                    }}
+                  />
+                ) : (
+                  <FillStar
+                    onClick={() => {
+                      handleClickShowTout();
+                    }}
+                  />
+                )}
               </InputWrap>
             </Li>
           </ChartData>
@@ -511,5 +591,18 @@ const ChartData = styled.div`
 const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const EmptyStar = styled(AiOutlineStar)`
+  height: 1.5vw;
+  width: 1.5vw;
+  margin: 0.4em 0 0.4em 0;
+`;
+
+const FillStar = styled(AiFillStar)`
+  color: yellow;
+  height: 1.5vw;
+  width: 1.5vw;
+  margin: 0.4em 0 0.4em 0;
 `;
 export const DashBoardWithRouter = withRouter(DashBoard);
